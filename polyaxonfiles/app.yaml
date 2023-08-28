@@ -1,0 +1,12 @@
+version: 1.1
+kind: component
+name: plx-streamlit-presidio-app
+tags: [streamlit, presidio]
+run:
+  kind: service
+  ports: [8501]
+  rewritePath: true
+  container:
+    image: avivkri/polyaxon-examples:plx-streamlit-presidio-app
+    imagePullPolicy: Always
+    command: [streamlit, run, presidio_streamlit.py]

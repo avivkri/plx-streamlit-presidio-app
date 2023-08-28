@@ -1,0 +1,15 @@
+version: 1.1
+kind: operation
+name: build-plx-streamlit-presidio-app
+params:
+  destination:
+    connection: "docker-connection"
+    value: polyaxon-examples:plx-streamlit-presidio-app
+  context:
+    value: "{{ globals.artifacts_path }}/plx-streamlit-presidio-app"
+runPatch:
+  init:
+    - git:
+        url: "https://github.com/avivkri/plx-streamlit-presidio-app"
+hubRef: kaniko
+
